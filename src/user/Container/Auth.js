@@ -1,14 +1,12 @@
-import { red } from '@mui/material/colors';
 import { useFormik } from 'formik';
 import React, { useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup'
 import Button from '../UI/Button/Button';
 
 function Auth(props) {
 
     const [authtype, setauthtype] = useState('login');
-
     const navigate = useNavigate();
 
     let authobj = {}, initialValue = {}
@@ -51,30 +49,32 @@ function Auth(props) {
         onSubmit: (value, action) => {
             console.log(value);
             action.resetForm()
+
+            if (authtype === 'login') {
+                handleLogin();
+            } else if (authtype === 'signup') {
+                handleRegister();
+            } else if (authtype === 'forget') {
+                handleForget();
+            }
+
         }
     })
 
-    const handleLogin = (() => {
+    const handleLogin = () => {
         localStorage.setItem("LoginData", 'true');
         navigate('/')
-    })
-
-    const handleRegister = (() => {
-
-    })
-
-    const handleForget = (() => {
-
-    })
-
-
-    if (authtype === 'login') {
-        handleLogin();
-    } else if (authtype === 'signup') {
-        handleRegister();
-    } else if (authtype === 'forget') {
-        handleForget();
     }
+
+    const handleRegister = () => {
+
+    }
+
+    const handleForget = () => {
+
+    };
+
+
 
 
     const { values, errors, touched, handleBlur, handleChange, handleSubmit } = formik;

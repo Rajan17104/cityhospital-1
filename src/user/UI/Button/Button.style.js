@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
+import styled from "styled-components";
 
 
-export const Basebutton = styled.button`
+const Basebutton = styled.button`
 border-radius: 3px;
 border: 2px solid #BF4F74;
 margin: 0 1em;

@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 import { customButtonCall, outlinedButton, primaryButton, secondaryButton } from './Button.style';
 
 function Button({ children, type }) {
@@ -16,11 +16,11 @@ function Button({ children, type }) {
         }
     }
 
-    const customButtonCall = customButton();
+    const Btntype = customButton();
     return (
-        <customButtonCall>
+        <Btntype>
             {children}
-        </customButtonCall>
+        </Btntype>
     );
 }
 

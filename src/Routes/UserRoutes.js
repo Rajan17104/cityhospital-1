@@ -29,7 +29,7 @@ function UserRoutes(props) {
                 <Route path="/About" element={<About />} />
                 <Route path="/Contact1" element={<Contact1 />} />
                 <Route path="/Appointment" element={<Appointment />} />
-                <Route path="/Auth" element={<Auth/>} />
+                <Route path="/Auth" element={<Auth />} />
                 {/* <Route path='/UseMedicines' element={<UseMedicines />} /> */}
                 {/* <Route path="/Doctor/:id" element={<Doctor/>}/>
           <Route path="/Doctor/visiting_doctors" element={<VisitingDoctors/>}/> */}
